@@ -6,10 +6,13 @@ package com.example.martabeveridge.stabagotchi;
 public enum Food {
 
     TREAT("Treat", 25, 1),
-    BOWL("Bowl", 50, 5),
+    BOWL("Bowl", 50, 3),
+    PEANUTBUTTER("Peanut butter", 75, 6),
     BIGBOWL("Big bowl", 100, 10),
-    RIBS("Ribs", 125, 15),
-    STEAK("Steak", 150, 20);
+    RIBS("Ribs", 150, 15),
+    STEAK("Steak", 200, 20),
+    ROASTCHICKEN("Roast, chicken", 250, 30);
+    
 
     private final String prettyNameOfFood;
     private final int costOfFood;
