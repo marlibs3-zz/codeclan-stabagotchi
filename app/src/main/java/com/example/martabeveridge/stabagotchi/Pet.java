@@ -7,11 +7,11 @@ public class Pet {
     private int healthPoints;
     private int lovePoints;
 
-    public Pet(String name, int level, int healthPoints, int lovePoints) {
+    public Pet(String name) {
         this.name = name;
-        this.level = level;
-        this.healthPoints = healthPoints;
-        this.lovePoints = lovePoints;
+        this.level = 1;
+        this.healthPoints = 100;
+        this.lovePoints = 0;
     }
 
     public String getName() {

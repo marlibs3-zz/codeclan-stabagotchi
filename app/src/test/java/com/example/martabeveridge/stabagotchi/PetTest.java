@@ -11,7 +11,7 @@ public class PetTest {
 
     @Before
     public void before() {
-        puppy = new Pet("Taco", 1, 100, 0);
+        puppy = new Pet("Taco");
     }
 
     @Test
