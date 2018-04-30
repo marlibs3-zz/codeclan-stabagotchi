@@ -12,7 +12,7 @@ public enum Food {
     RIBS("Ribs", 150, 15),
     STEAK("Steak", 200, 20),
     ROASTCHICKEN("Roast, chicken", 250, 30);
-    
+
 
     private final String prettyNameOfFood;
     private final int costOfFood;
