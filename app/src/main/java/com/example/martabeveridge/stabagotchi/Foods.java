@@ -3,7 +3,7 @@ package com.example.martabeveridge.stabagotchi;
 // This enum contains all the different types of food you can feed the pet. The first value is the
 // cost of the food in lv (love points) and the second one is the health it restores in hp.
 
-public enum Food {
+public enum Foods {
 
     TREAT("Treat", 25, 1),
     BOWL("Bowl", 50, 3),
@@ -18,7 +18,7 @@ public enum Food {
     private final int costOfFood;
     private final int hpRestoreValue;
 
-    private Food(String prettyNameOfFood, int costOfFood, int hpRestoreValue) {
+    Foods(String prettyNameOfFood, int costOfFood, int hpRestoreValue) {
         this.prettyNameOfFood = prettyNameOfFood;
         this.costOfFood = costOfFood;
         this.hpRestoreValue = hpRestoreValue;
