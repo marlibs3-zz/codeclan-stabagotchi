@@ -34,4 +34,22 @@ public class PetTest {
         assertEquals(0, puppy.getLovePoints());
     }
 
+    @Test
+    public void canSetLevel() {
+        puppy.setLevel(2);
+        assertEquals(2, puppy.getLevel());
+    }
+
+    @Test
+    public void canSetHealthPoints() {
+        puppy.setHealthPoints(99);
+        assertEquals(99, puppy.getHealthPoints());
+    }
+
+    @Test
+    public void canSetLovePoints() {
+        puppy.setLovePoints(1);
+        assertEquals(1, puppy.getLovePoints());
+    }
+
 }

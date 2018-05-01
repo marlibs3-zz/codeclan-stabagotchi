@@ -29,4 +29,16 @@ public class Pet {
     public int getLovePoints() {
         return lovePoints;
     }
+
+    public void setLevel(int level) {
+        this.level = level;
+    }
+
+    public void setHealthPoints(int healthPoints) {
+        this.healthPoints = healthPoints;
+    }
+
+    public void setLovePoints(int lovePoints) {
+        this.lovePoints = lovePoints;
+    }
 }
