@@ -15,12 +15,26 @@ public class Game {
         }
     }
 
-    public void feed(Foods food) {
-        if (food.getCostOfFood() <= pet.getLovePoints()) {
-            int lovePointsTotal;
-            lovePointsTotal = pet.getLovePoints() - food.getCostOfFood();
-            pet.setLovePoints(lovePointsTotal);
+    public void replenishHealth(Foods food) {
+        int currentHealthDeficit = 100 - pet.getHealthPoints();
+        
+        if (food.getHpRestoreValue() < currentHealthDeficit) {
+            int newHealthPoints = pet.getHealthPoints() + food.getHpRestoreValue();
+            pet.setHealthPoints(newHealthPoints);
+        }
+        else {
+            pet.setHealthPoints(100);
         }
     }
+
+//    public void feed(Foods food) {
+//        if (food.getCostOfFood() <= pet.getLovePoints()) {
+//            int lovePointsTotal;
+//            lovePointsTotal = pet.getLovePoints() - food.getCostOfFood();
+//            pet.setLovePoints(lovePointsTotal);
+//
+//            replenishHealth();
+//        }
+//    }
 
 }

@@ -7,13 +7,13 @@ import static org.junit.Assert.assertEquals;
 
 public class GameTest {
 
-    private Foods food;
+    private Foods treat;
     private Pet puppy;
     private Game game;
 
     @Before
     public void before() {
-        food = Foods.TREAT;
+        treat = Foods.TREAT;
         puppy = new Pet("Taco");
         game = new Game(puppy);
     }
@@ -28,10 +28,17 @@ public class GameTest {
     }
 
     @Test
-    public void canFeedPet() {
-        puppy.setLovePoints(50);
-        game.feed(food);
-        assertEquals(25, puppy.getLovePoints());
+    public void canReplenishHealth() {
+        puppy.setHealthPoints(1);
+        game.replenishHealth(treat);
+        assertEquals(26, puppy.getHealthPoints());
     }
+
+//    @Test
+//    public void canFeedPet() {
+//        puppy.setLovePoints(50);
+//        game.feed(treat);
+//        assertEquals(25, puppy.getLovePoints());
+//    }
 
 }
