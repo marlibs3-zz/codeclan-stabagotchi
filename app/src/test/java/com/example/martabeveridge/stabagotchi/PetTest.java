@@ -7,7 +7,7 @@ import static org.junit.Assert.assertEquals;
 
 public class PetTest {
 
-    Pet puppy;
+    private Pet puppy;
 
     @Before
     public void before() {
@@ -50,6 +50,19 @@ public class PetTest {
     public void canSetLovePoints() {
         puppy.setLovePoints(1);
         assertEquals(1, puppy.getLovePoints());
+    }
+
+    @Test
+    public void canAddLovePoint() {
+        puppy.addLovePoint();
+        assertEquals(1, puppy.getLovePoints());
+    }
+
+    @Test
+    public void canLevelUp() {
+        puppy.levelUp();
+        puppy.levelUp();
+        assertEquals(3, puppy.getLevel());
     }
 
 }

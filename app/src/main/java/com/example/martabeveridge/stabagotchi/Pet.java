@@ -41,4 +41,12 @@ public class Pet {
     public void setLovePoints(int lovePoints) {
         this.lovePoints = lovePoints;
     }
+
+    public void addLovePoint() {
+        lovePoints++;
+    }
+
+    public void levelUp(){
+        level++;
+    }
 }
