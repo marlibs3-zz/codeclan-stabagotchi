@@ -2,6 +2,7 @@ package com.example.martabeveridge.stabagotchi;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
@@ -29,10 +30,29 @@ public class GameActivity extends AppCompatActivity {
         lovePoints = findViewById(R.id.lovePointsTextViewID);
         petName = findViewById(R.id.petNameTextViewID);
 
+//      Set up the food buttons
+        Button feedTreat = findViewById(R.id.feedTreatID);
+        feedTreat.setTag(Foods.TREAT);
+        Button feedBowl = findViewById(R.id.feedBowlID);
+        feedBowl.setTag(Foods.BOWL);
+        Button feedBigBowl = findViewById(R.id.feedBigBowlID);
+        feedBigBowl.setTag(Foods.BIGBOWL);
+        Button feedRibs = findViewById(R.id.feedRibsID);
+        feedRibs.setTag(Foods.RIBS);
+        Button feedSteak = findViewById(R.id.feedSteakID);
+        feedSteak.setTag(Foods.STEAK);
+        Button feedRoastChicken = findViewById(R.id.feedRoastChickenID);
+        feedRoastChicken.setTag(Foods.ROASTCHICKEN);
+
 //      Load previous status TODO
 
 //      Refresh the screen for health to go down TODO
 
+    }
+
+    public void onFoodButtonClicked(View foodButton){
+        Foods foodClicked = (Foods) foodButton.getTag();
+        game.feed(foodClicked);
     }
 
 }

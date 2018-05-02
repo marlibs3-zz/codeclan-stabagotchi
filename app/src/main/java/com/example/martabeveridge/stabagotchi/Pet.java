@@ -49,4 +49,8 @@ public class Pet {
     public void levelUp(){
         level++;
     }
+
+    public void increaseHealthBy(int foodHealthValue) {
+
+    }
 }
