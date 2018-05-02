@@ -36,10 +36,12 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
         android:text="TextView"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@+id/lovePointsTextViewID"
         app:layout_constraintStart_toStartOf="@+id/healthTextViewID"
-        tools:layout_editor_absoluteY="16dp" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ProgressBar
         android:id="@+id/healthBarID"
@@ -48,7 +50,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="17dp"
+        android:layout_marginTop="18dp"
         app:layout_constraintStart_toEndOf="@+id/healthTextViewID"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -155,19 +157,37 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/feedChickenID" />
 
-    <ImageView
-        android:id="@+id/petImageID"
-        android:layout_width="300dp"
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="24dp"
         android:layout_marginLeft="24dp"
         android:layout_marginRight="24dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="8dp"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/feedBigBowlID"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nameTextViewID"
-        app:srcCompat="@drawable/ic_dog" />
+        app:layout_constraintTop_toBottomOf="@+id/nameTextViewID">
+
+        <ImageView
+            android:id="@+id/petImageID"
+            android:layout_width="300dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/feedBigBowlID"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nameTextViewID"
+            android:layout_height="match_parent"
+            app:srcCompat="@raw/nonvectordog"
+            />
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
