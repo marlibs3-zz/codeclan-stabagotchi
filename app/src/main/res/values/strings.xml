@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Stabagotchi</string>
-    <string name="health">health: </string>
-    <string name="love">love: </string>
+    <string name="health">health </string>
+    <string name="love">love </string>
     <!--Feeding buttons-->
     <string name="feed_treat">treat (25)</string>
     <string name="feed_bowl">bowl (50)</string>
