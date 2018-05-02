@@ -39,10 +39,10 @@ public class GameActivity extends AppCompatActivity {
         feedBigBowl.setTag(Foods.BIGBOWL);
         Button feedRibs = findViewById(R.id.feedRibsID);
         feedRibs.setTag(Foods.RIBS);
+        Button feedChicken = findViewById(R.id.feedChickenID);
+        feedChicken.setTag(Foods.CHICKEN);
         Button feedSteak = findViewById(R.id.feedSteakID);
         feedSteak.setTag(Foods.STEAK);
-        Button feedRoastChicken = findViewById(R.id.feedRoastChickenID);
-        feedRoastChicken.setTag(Foods.ROASTCHICKEN);
 
 //      Load previous status TODO
 

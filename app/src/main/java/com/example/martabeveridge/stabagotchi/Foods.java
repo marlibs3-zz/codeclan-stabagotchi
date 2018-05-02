@@ -9,8 +9,8 @@ public enum Foods {
     BOWL("Bowl", 50, 5),
     BIGBOWL("Big bowl", 100, 10),
     RIBS("Ribs", 150, 15),
-    STEAK("Steak", 200, 20),
-    ROASTCHICKEN("Roast, chicken", 250, 30);
+    CHICKEN("Chicken", 200, 20),
+    STEAK("Steak", 250, 30);
 
 
     private final String prettyNameOfFood;

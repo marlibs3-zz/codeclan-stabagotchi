@@ -13,7 +13,7 @@
         android:layout_marginLeft="24dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
-        android:text="TextView"
+        android:text="@string/health"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -26,7 +26,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
-        android:text="TextView"
+        android:text="@string/love"
         app:layout_constraintEnd_toStartOf="@+id/lovePointsTextViewID"
         app:layout_constraintStart_toEndOf="@+id/levelTextViewID"
         app:layout_constraintTop_toTopOf="parent" />
@@ -92,72 +92,78 @@
 
     <Button
         android:id="@+id/feedTreatID"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_marginBottom="32dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginStart="24dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
         android:onClick="foodButtonClicked"
-        android:text="Button"
+        android:text="@string/feed_treat"
+        android:textSize="8sp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/feedBowlID"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/feedBowlID"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_marginBottom="32dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginStart="8dp"
-        android:text="Button"
+        android:onClick="onFoodButtonClicked"
+        android:text="@string/feed_bowl"
+        android:textSize="8sp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/feedBigBowlID"
         app:layout_constraintStart_toEndOf="@+id/feedTreatID" />
 
     <Button
         android:id="@+id/feedBigBowlID"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_marginBottom="32dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginStart="8dp"
-        android:text="Button"
+        android:onClick="onFoodButtonClicked"
+        android:text="@string/feed_big_bowl"
+        android:textSize="8sp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/feedRibsID"
         app:layout_constraintStart_toEndOf="@+id/feedBowlID" />
 
     <Button
         android:id="@+id/feedRibsID"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_marginBottom="32dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginStart="8dp"
-        android:text="Button"
+        android:onClick="onFoodButtonClicked"
+        android:text="@string/feed_ribs"
+        android:textSize="8sp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/feedChickenID"
         app:layout_constraintStart_toEndOf="@+id/feedBigBowlID" />
 
     <Button
-        android:id="@+id/feedSteakID"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:id="@+id/feedChickenID"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_marginBottom="32dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginStart="8dp"
-        android:text="Button"
+        android:onClick="onFoodButtonClicked"
+        android:text="@string/feed_chicken"
+        android:textSize="8sp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/feedSteakID"
         app:layout_constraintStart_toEndOf="@+id/feedRibsID" />
 
     <Button
-        android:id="@+id/feedRoastChickenID"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:id="@+id/feedSteakID"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_marginBottom="32dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="24dp"
-        android:layout_marginStart="8dp"
-        android:text="Button"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:onClick="onFoodButtonClicked"
+        android:text="@string/feed_steak"
+        android:textSize="8sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/feedSteakID" />
+        app:layout_constraintStart_toEndOf="@+id/feedChickenID" />
 
 </android.support.constraint.ConstraintLayout>
