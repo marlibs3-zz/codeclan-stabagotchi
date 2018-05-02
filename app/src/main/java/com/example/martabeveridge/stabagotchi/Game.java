@@ -15,22 +15,10 @@ public class Game {
         }
     }
 
-    private void replenishHealth(Foods food) {
-
+    public void replenishHealth(Foods food) {
         int foodHealthValue = food.getHpRestoreValue();
-        pet.increaseHealthBy(foodHealthValue);
-
-
-//        int currentHealthDeficit = 100 - pet.getHealthPoints();
-
-//        if (food.getHpRestoreValue() < currentHealthDeficit) {
-//            int newHealthPoints = pet.getHealthPoints() + food.getHpRestoreValue();
-//            pet.setHealthPoints(newHealthPoints);
-//        }
-//        else {
-////          modify set to max at 100
-//            pet.setHealthPoints(100);
-//        }
+        int foodCost = food.getCostOfFood();
+        pet.increaseHealthBy(foodHealthValue, foodCost);
     }
 
     public void feed(Foods food) {

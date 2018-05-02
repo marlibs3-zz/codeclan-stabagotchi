@@ -50,7 +50,23 @@ public class Pet {
         level++;
     }
 
-    public void increaseHealthBy(int foodHealthValue) {
+    public boolean canGainThisMuchHealth(int healthToBeAdded){
+        int currentHealthDeficit = 100 - getHealthPoints();
+        return healthToBeAdded <= currentHealthDeficit;
+    }
 
+    public boolean canAffordThisFood(int costOfFood) {
+        return costOfFood < getLovePoints();
+    }
+
+    public void increaseHealthBy(int foodHealthValue, int foodCost) {
+        if (canAffordThisFood(foodCost)) {
+            if (canGainThisMuchHealth(foodHealthValue)) {
+                int newHealthPoints = foodHealthValue + getHealthPoints();
+                setHealthPoints(newHealthPoints);
+                int newLovePoints = lovePoints - foodCost;
+                setLovePoints(newLovePoints);
+            }
+        }
     }
 }

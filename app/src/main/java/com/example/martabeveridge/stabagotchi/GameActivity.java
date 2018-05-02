@@ -4,7 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -16,19 +16,23 @@ public class GameActivity extends AppCompatActivity {
     private ProgressBar healthBar;
     private TextView level;
     private TextView lovePoints;
-    private TextView petName;
-    private ImageButton petButton;
+    private TextView name;
+    private ImageView petImage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
+        pet = new Pet("Taco");
+        game = new Game(pet);
+
 //      Start up the game
         healthBar = findViewById(R.id.healthBarID);
         level = findViewById(R.id.levelTextViewID);
         lovePoints = findViewById(R.id.lovePointsTextViewID);
-        petName = findViewById(R.id.petNameTextViewID);
+        name = findViewById(R.id.nameTextViewID);
+        petImage = findViewById(R.id.petImageID);
 
 //      Set up the food buttons
         Button feedTreat = findViewById(R.id.feedTreatID);
@@ -43,6 +47,16 @@ public class GameActivity extends AppCompatActivity {
         feedChicken.setTag(Foods.CHICKEN);
         Button feedSteak = findViewById(R.id.feedSteakID);
         feedSteak.setTag(Foods.STEAK);
+
+//      Add the pet data which cannot change
+        String levelString = ""+pet.getLevel();
+        level.setText(levelString);
+        name.setText(pet.getName());
+
+//      Add the pet data which can change
+        healthBar.setProgress(pet.getHealthPoints());
+        String loveString = ""+pet.getLovePoints();
+        lovePoints.setText(loveString);
 
 //      Load previous status TODO
 
