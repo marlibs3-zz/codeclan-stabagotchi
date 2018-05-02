@@ -6,8 +6,7 @@ package com.example.martabeveridge.stabagotchi;
 public enum Foods {
 
     TREAT("Treat", 25, 1),
-    BOWL("Bowl", 50, 3),
-    PEANUTBUTTER("Peanut butter", 75, 6),
+    BOWL("Bowl", 50, 5),
     BIGBOWL("Big bowl", 100, 10),
     RIBS("Ribs", 150, 15),
     STEAK("Steak", 200, 20),
