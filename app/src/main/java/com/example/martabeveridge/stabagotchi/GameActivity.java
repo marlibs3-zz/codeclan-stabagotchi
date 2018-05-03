@@ -28,6 +28,7 @@ public class GameActivity extends AppCompatActivity {
     private TextView name;
     private ImageView petImage;
     private Vibrator vibrator;
+    private int dogImageFrameIndex;
 
     Handler handler = new Handler();
 
@@ -55,6 +56,9 @@ public class GameActivity extends AppCompatActivity {
 
         handler.post(runnableCode);
 
+        dogImageFrameIndex = 0;
+        handler.postDelayed(updateDogImageFrameRunnable, 100);
+
 //      Load previous status TODO
 
     }
@@ -69,6 +73,24 @@ public class GameActivity extends AppCompatActivity {
                 finish();
             }
             refresh();
+        }
+    };
+
+    private Runnable updateDogImageFrameRunnable = new Runnable() {
+        @Override
+        public void run() {
+            ImageView dogImageView = findViewById(R.id.petImageID);
+
+            dogImageFrameIndex++;
+
+            if (dogImageFrameIndex > 3) {
+                dogImageFrameIndex = 0;
+            }
+
+            int dogImageFrameResourceId = getResources().getIdentifier("frame_" + dogImageFrameIndex + "_vectormagic_inkscape_svg2android", "drawable", getPackageName());
+            dogImageView.setImageResource(dogImageFrameResourceId);
+
+            handler.postDelayed(updateDogImageFrameRunnable, 100);
         }
     };
 

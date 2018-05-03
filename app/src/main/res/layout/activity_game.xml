@@ -110,7 +110,7 @@
         android:onClick="onPetClicked"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/marta_game_dog_inkscape_1" />
+        app:srcCompat="@drawable/frame_0_vectormagic_inkscape_svg2android" />
 
     <LinearLayout
         android:id="@+id/linearLayout2"
