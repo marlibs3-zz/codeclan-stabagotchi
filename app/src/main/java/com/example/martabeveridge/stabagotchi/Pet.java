@@ -10,8 +10,8 @@ public class Pet {
     public Pet(String name) {
         this.name = name;
         this.level = 1;
-        this.healthPoints = 100;
-        this.lovePoints = 0;
+        this.healthPoints = 75;
+        this.lovePoints = 200;
     }
 
     public String getName() {
@@ -36,6 +36,7 @@ public class Pet {
 
     public void setHealthPoints(int healthPoints) {
         this.healthPoints = healthPoints;
+        if (healthPoints > 100) this.healthPoints = 100;
     }
 
     public void setLovePoints(int lovePoints) {
@@ -50,23 +51,16 @@ public class Pet {
         level++;
     }
 
-    public boolean canGainThisMuchHealth(int healthToBeAdded){
-        int currentHealthDeficit = 100 - getHealthPoints();
-        return healthToBeAdded <= currentHealthDeficit;
-    }
-
     public boolean canAffordThisFood(int costOfFood) {
-        return costOfFood < getLovePoints();
+        return costOfFood <= getLovePoints();
     }
 
     public void increaseHealthBy(int foodHealthValue, int foodCost) {
         if (canAffordThisFood(foodCost)) {
-            if (canGainThisMuchHealth(foodHealthValue)) {
                 int newHealthPoints = foodHealthValue + getHealthPoints();
                 setHealthPoints(newHealthPoints);
                 int newLovePoints = lovePoints - foodCost;
                 setLovePoints(newLovePoints);
-            }
         }
     }
 }

@@ -65,17 +65,17 @@ public class PetTest {
         assertEquals(3, puppy.getLevel());
     }
 
-    @Test
-    public void canTellIfCanGainThisMuchHealth() {
-        puppy.setHealthPoints(1);
-        assertEquals(true, puppy.canGainThisMuchHealth(10));
-    }
-
-    @Test
-    public void canTellIfCanGainThisMuchHealth__not() {
-        puppy.setHealthPoints(99);
-        assertEquals(false, puppy.canGainThisMuchHealth(10));
-    }
+//    @Test
+//    public void canTellIfCanGainThisMuchHealth() {
+//        puppy.setHealthPoints(1);
+//        assertEquals(true, puppy.canGainThisMuchHealth(10));
+//    }
+//
+//    @Test
+//    public void canTellIfCanGainThisMuchHealth__not() {
+//        puppy.setHealthPoints(99);
+//        assertEquals(false, puppy.canGainThisMuchHealth(10));
+//    }
 
     @Test
     public void canAffordThisFood() {

@@ -23,10 +23,6 @@ public class Game {
 
     public void feed(Foods food) {
         if (food.getCostOfFood() <= pet.getLovePoints()) {
-//            pet.loseLovePoints(food.getCostOfFood());
-            int lovePointsTotal = pet.getLovePoints() - food.getCostOfFood();
-            pet.setLovePoints(lovePointsTotal);
-
             replenishHealth(food);
         }
     }

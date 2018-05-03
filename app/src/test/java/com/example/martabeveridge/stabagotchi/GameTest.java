@@ -29,6 +29,19 @@ public class GameTest {
         assertEquals(2, puppy.getLevel());
     }
 
+    @Test
+    public void feedIncreasesHealth() {
+        puppy.setLovePoints(10000);
+        game.feed(Foods.BIGBOWL);
+        assertEquals(60, puppy.getHealthPoints());
+    }
+
+    @Test
+    public void feedDecreasesMoney() {
+        game.feed(Foods.BOWL);
+        assertEquals(150, puppy.getLovePoints());
+    }
+
 //    @Test
 //    public void canReplenishHealth() {
 //        puppy.setHealthPoints(1);
