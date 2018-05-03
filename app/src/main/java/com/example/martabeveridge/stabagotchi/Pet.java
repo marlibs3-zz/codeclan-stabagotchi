@@ -11,7 +11,7 @@ public class Pet implements Serializable{
 
     public Pet(String name) {
         this.name = name;
-        this.level = 4;
+        this.level = 1;
         this.healthPoints = 100;
         this.lovePoints = 200;
     }
