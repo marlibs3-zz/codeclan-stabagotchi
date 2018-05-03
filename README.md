@@ -1,3 +1,7 @@
+# Stabagotchi
+
+![Stabagotchi Demo](https://raw.githubusercontent.com/beveradb/codeclan-stabagotchi/master/stabagotchi-demo.gif)
+
 # Java/Android Project Definitions - Solo Project
 
 ## General Rules (Applies to ALL projects)
