@@ -4,11 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context=".GameActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="75dp"
+        android:layout_height="69dp"
         android:orientation="horizontal"
         tools:layout_editor_absoluteX="46dp"
         tools:layout_editor_absoluteY="0dp">
@@ -23,6 +24,7 @@
             android:gravity="center"
             android:text="@string/health"
             android:textSize="18sp"
+            app:fontFamily="@font/coda"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -49,6 +51,7 @@
             android:text="TextView"
             android:textSize="30sp"
             android:textStyle="bold"
+            app:fontFamily="@font/coda"
             app:layout_constraintEnd_toStartOf="@+id/loveTextViewID"
             app:layout_constraintStart_toEndOf="@+id/healthBarID"
             app:layout_constraintTop_toTopOf="parent" />
@@ -63,6 +66,7 @@
             android:gravity="center"
             android:text="@string/love"
             android:textSize="18sp"
+            app:fontFamily="@font/coda"
             app:layout_constraintEnd_toStartOf="@+id/lovePointsTextViewID"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -91,103 +95,25 @@
         android:layout_marginTop="80dp"
         android:gravity="center"
         android:text="TextView"
-        android:textSize="24sp"
+        android:textSize="36sp"
+        app:fontFamily="@font/coda"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/feedTreatID"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginBottom="32dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginStart="8dp"
-        android:onClick="onFeedTreatClicked"
-        android:text="@string/feed_treat"
-        android:textSize="8sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/feedBowlID"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/feedBowlID"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginBottom="32dp"
-        android:onClick="onFeedBowlClicked"
-        android:text="@string/feed_bowl"
-        android:textSize="8sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/feedBigBowlID"
-        app:layout_constraintStart_toEndOf="@+id/feedTreatID" />
-
-    <Button
-        android:id="@+id/feedBigBowlID"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginBottom="32dp"
-        android:onClick="onFeedBigBowlClicked"
-        android:text="@string/feed_big_bowl"
-        android:textSize="8sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/feedRibsID"
-        app:layout_constraintStart_toEndOf="@+id/feedBowlID" />
-
-    <Button
-        android:id="@+id/feedRibsID"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginBottom="32dp"
-        android:onClick="onFeedRibsClicked"
-        android:text="@string/feed_ribs"
-        android:textSize="8sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/feedChickenID"
-        app:layout_constraintStart_toEndOf="@+id/feedBigBowlID" />
-
-    <Button
-        android:id="@+id/feedChickenID"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginBottom="32dp"
-        android:onClick="onFeedChickenClicked"
-        android:text="@string/feed_chicken"
-        android:textSize="8sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/feedSteakID"
-        app:layout_constraintStart_toEndOf="@+id/feedRibsID" />
-
-    <Button
-        android:id="@+id/feedSteakID"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginBottom="32dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:onClick="onFeedSteakClicked"
-        android:text="@string/feed_steak"
-        android:textSize="8sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/feedChickenID" />
-
     <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginRight="24dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="336dp"
+        android:layout_height="221dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="64dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/feedBigBowlID"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nameTextViewID"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toBottomOf="@+id/nameTextViewID">
 
         <ImageView
             android:id="@+id/petImageID"
@@ -206,6 +132,115 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/nameTextViewID"
             app:srcCompat="@raw/nonvectordog" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="368dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/feedTreatID"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:onClick="onFeedTreatClicked"
+            android:text="@string/feed_treat"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/feedBowlID"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/feedBowlID"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:onClick="onFeedBowlClicked"
+            android:text="@string/feed_bowl"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/feedBigBowlID"
+            app:layout_constraintStart_toEndOf="@+id/feedTreatID" />
+
+        <Button
+            android:id="@+id/feedBigBowlID"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="8dp"
+            android:layout_weight="1"
+            android:onClick="onFeedBigBowlClicked"
+            android:text="@string/feed_big_bowl"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/feedRibsID"
+            app:layout_constraintStart_toEndOf="@+id/feedBowlID" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="368dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="32dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/feedRibsID"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="8dp"
+            android:layout_weight="1"
+            android:onClick="onFeedRibsClicked"
+            android:text="@string/feed_ribs"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/feedChickenID"
+            app:layout_constraintStart_toEndOf="@+id/feedBigBowlID" />
+
+        <Button
+            android:id="@+id/feedChickenID"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:onClick="onFeedChickenClicked"
+            android:text="@string/feed_chicken"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/feedSteakID"
+            app:layout_constraintStart_toEndOf="@+id/feedRibsID" />
+
+        <Button
+            android:id="@+id/feedSteakID"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_weight="1"
+            android:onClick="onFeedSteakClicked"
+            android:text="@string/feed_steak"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/feedChickenID" />
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

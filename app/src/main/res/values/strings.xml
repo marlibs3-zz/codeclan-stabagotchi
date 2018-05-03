@@ -3,16 +3,10 @@
     <string name="health">health </string>
     <string name="love">love </string>
     <!--Feeding buttons-->
-    <string name="feed_treat">treat\
-        (10)</string>
-    <string name="feed_bowl">bowl\
-        (25)</string>
-    <string name="feed_big_bowl">big bowl\
-        (50)</string>
-    <string name="feed_ribs">ribs\
-        (75)</string>
-    <string name="feed_chicken">chicken\
-        (100)</string>
-    <string name="feed_steak">steak\
-        (150)</string>
+    <string name="feed_treat">treat (10)</string>
+    <string name="feed_bowl">bowl (25)</string>
+    <string name="feed_big_bowl">big bowl (50)</string>
+    <string name="feed_ribs">ribs (75)</string>
+    <string name="feed_chicken">chicken (100)</string>
+    <string name="feed_steak">steak (150)</string>
 </resources>
