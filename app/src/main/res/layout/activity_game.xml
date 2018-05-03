@@ -5,7 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".GameActivity">
+    tools:context=".GameActivity"
+    android:id="@+id/backgroundLayoutID"
+    >
 
     <TextView
         android:id="@+id/healthTextViewID"
@@ -87,6 +89,7 @@
         android:layout_marginTop="80dp"
         android:gravity="center"
         android:text="TextView"
+        android:textColor="@color/colorAccent"
         android:textSize="36sp"
         app:fontFamily="@font/coda"
         app:layout_constraintEnd_toEndOf="parent"

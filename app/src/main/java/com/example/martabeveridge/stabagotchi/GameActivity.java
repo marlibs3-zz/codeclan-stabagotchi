@@ -6,6 +6,7 @@ import android.os.Handler;
 import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Layout;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
@@ -64,6 +65,9 @@ public class GameActivity extends AppCompatActivity {
             Log.d("Handlers", "Called on main thread");
             pet.decreaseHealthByOne();
             handler.postDelayed(runnableCode, 1000);
+            if (pet.getHealthPoints() <= 0) {
+                finish();
+            }
             refresh();
         }
     };
@@ -71,7 +75,11 @@ public class GameActivity extends AppCompatActivity {
     public void refresh() {
         String levelString = ""+pet.getLevel();
         level.setText(levelString);
-        name.setText(pet.getName());
+        if (pet.getLevel() == 5){
+            name.setText("Evil " + pet.getName());
+        } else{
+            name.setText(pet.getName());
+        }
 
         healthBar.setProgress(pet.getHealthPoints());
         String loveString = ""+pet.getLovePoints();
@@ -80,8 +88,11 @@ public class GameActivity extends AppCompatActivity {
 
 public void onPetClicked(View view) {
         vibrator.vibrate(25);
-//        Toast.makeText(this, "Woof!", Toast.LENGTH_SHORT).show();
-        pet.addLovePoint();
+        if (pet.getLevel() == 5){
+            pet.decreaseHealthByOne();
+        } else {
+            pet.addLovePoint();
+        }
         refresh();
     }
 
@@ -148,6 +159,11 @@ public void onPetClicked(View view) {
     public void onLevelUpClicked(View view) {
         if (pet.getLovePoints() >= 100) {
             pet.levelUp();
+            if (pet.getLevel() == 5){
+                View backgroundLayout = findViewById(R.id.backgroundLayoutID);
+                backgroundLayout.setBackground(getResources().getDrawable(R.drawable.backgrounddark));
+                pet.setLovePoints(0);
+            }
             Toast.makeText(this, pet.getName() + " is now level " + pet.getLevel() + "!", Toast.LENGTH_SHORT).show();
         } else {
             Toast.makeText(this, "You need 100 love points to level up " + pet.getName(), Toast.LENGTH_SHORT).show();
