@@ -10,7 +10,7 @@ public class Pet {
     public Pet(String name) {
         this.name = name;
         this.level = 1;
-        this.healthPoints = 75;
+        this.healthPoints = 100;
         this.lovePoints = 200;
     }
 
@@ -49,6 +49,10 @@ public class Pet {
 
     public void levelUp(){
         level++;
+    }
+
+    public void decreaseHealthByOne() {
+        healthPoints--;
     }
 
     public boolean canAffordThisFood(int costOfFood) {

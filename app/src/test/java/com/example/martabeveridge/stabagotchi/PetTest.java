@@ -26,12 +26,12 @@ public class PetTest {
 
     @Test
     public void hasHealthPoints() {
-        assertEquals(100, puppy.getHealthPoints());
+        assertEquals(75, puppy.getHealthPoints());
     }
 
     @Test
     public void hasLovePoints() {
-        assertEquals(0, puppy.getLovePoints());
+        assertEquals(200, puppy.getLovePoints());
     }
 
     @Test
@@ -55,7 +55,7 @@ public class PetTest {
     @Test
     public void canAddLovePoint() {
         puppy.addLovePoint();
-        assertEquals(1, puppy.getLovePoints());
+        assertEquals(201, puppy.getLovePoints());
     }
 
     @Test
@@ -105,6 +105,12 @@ public class PetTest {
         puppy.increaseHealthBy(10, 20);
         assertEquals(5, puppy.getHealthPoints());
         assertEquals(10, puppy.getLovePoints());
+    }
+
+    @Test
+    public void canDecreaseHealthByOne() {
+        puppy.decreaseHealthByOne();
+        assertEquals(74, puppy.getHealthPoints());
     }
 
 }
