@@ -90,8 +90,10 @@ public void onPetClicked(View view) {
         vibrator.vibrate(25);
         if (pet.getLevel() == 5){
             pet.decreaseHealthByOne();
+            Toast.makeText(this, "Why are you stabbing him?!", Toast.LENGTH_SHORT).show();
         } else {
             pet.addLovePoint();
+            Toast.makeText(this, pet.getName() + " loves it when you pet him!", Toast.LENGTH_SHORT).show();
         }
         refresh();
     }

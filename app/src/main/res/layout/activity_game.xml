@@ -134,7 +134,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/nameTextViewID"
-            app:srcCompat="@raw/nonvectordog" />
+            app:srcCompat="@drawable/dog"/>
     </LinearLayout>
 
     <LinearLayout
