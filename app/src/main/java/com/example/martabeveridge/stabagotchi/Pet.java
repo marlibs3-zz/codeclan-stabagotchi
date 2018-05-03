@@ -1,6 +1,8 @@
 package com.example.martabeveridge.stabagotchi;
 
-public class Pet {
+import java.io.Serializable;
+
+public class Pet implements Serializable{
 
     private String name;
     private int level;
@@ -49,6 +51,7 @@ public class Pet {
 
     public void levelUp(){
         level++;
+        lovePoints -= 100;
     }
 
     public void decreaseHealthByOne() {

@@ -2,11 +2,13 @@
     <string name="app_name">Stabagotchi</string>
     <string name="health">health </string>
     <string name="love">love </string>
+    <string name="saved_game">SAVE1</string>
     <!--Feeding buttons-->
     <string name="feed_treat">treat (10)</string>
-    <string name="feed_bowl">bowl (25)</string>
-    <string name="feed_big_bowl">big bowl (50)</string>
-    <string name="feed_ribs">ribs (75)</string>
-    <string name="feed_chicken">chicken (100)</string>
-    <string name="feed_steak">steak (150)</string>
+    <string name="feed_bowl">bowl (20)</string>
+    <string name="feed_big_bowl">big bowl (30)</string>
+    <string name="feed_ribs">ribs (50)</string>
+    <string name="feed_chicken">chicken (75)</string>
+    <string name="feed_steak">steak (100)</string>
+    <string name="level_up">level up!</string>
 </resources>

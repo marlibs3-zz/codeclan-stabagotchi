@@ -5,12 +5,12 @@ package com.example.martabeveridge.stabagotchi;
 
 public enum Foods {
 
-    TREAT("Treat", 10, 2),
-    BOWL("Bowl", 25, 5),
-    BIGBOWL("Big bowl", 50, 10),
-    RIBS("Ribs", 75, 15),
-    CHICKEN("Chicken", 100, 20),
-    STEAK("Steak", 150, 30);
+    TREAT("Treat", 10, 5),
+    BOWL("Bowl", 20, 10),
+    BIGBOWL("Big bowl", 30, 15),
+    RIBS("Ribs", 50, 20),
+    CHICKEN("Chicken", 75, 30),
+    STEAK("Steak", 100, 40);
 
 
     private final String prettyNameOfFood;

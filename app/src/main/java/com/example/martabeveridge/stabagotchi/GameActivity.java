@@ -1,6 +1,7 @@
 package com.example.martabeveridge.stabagotchi;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Handler;
 import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +12,8 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.gson.Gson;
 
 
 public class GameActivity extends AppCompatActivity {
@@ -35,11 +38,8 @@ public class GameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
-
-
         pet = new Pet("Taco");
         game = new Game(pet);
-
 
         vibrator = (Vibrator) GameActivity.this.getSystemService(Context.VIBRATOR_SERVICE);
 
@@ -89,6 +89,8 @@ public void onPetClicked(View view) {
         if (pet.canAffordThisFood(Foods.TREAT.getCostOfFood())) {
             Toast.makeText(this, "A yummy treat for " + pet.getName(), Toast.LENGTH_SHORT).show();
             game.feed(Foods.TREAT);
+        } else {
+            Toast.makeText(this, "You can't afford this yet", Toast.LENGTH_SHORT).show();
         }
         refresh();
     }
@@ -97,6 +99,8 @@ public void onPetClicked(View view) {
         if (pet.canAffordThisFood(Foods.BOWL.getCostOfFood())) {
             Toast.makeText(this, "A bowl of chow for " + pet.getName(), Toast.LENGTH_SHORT).show();
             game.feed(Foods.BOWL);
+        } else {
+            Toast.makeText(this, "You can't afford this yet", Toast.LENGTH_SHORT).show();
         }
         refresh();
     }
@@ -105,6 +109,8 @@ public void onPetClicked(View view) {
         if (pet.canAffordThisFood(Foods.BIGBOWL.getCostOfFood())) {
             Toast.makeText(this, "A massive bowl of chow for " + pet.getName(), Toast.LENGTH_SHORT).show();
             game.feed(Foods.BIGBOWL);
+        } else {
+            Toast.makeText(this, "You can't afford this yet", Toast.LENGTH_SHORT).show();
         }
         refresh();
     }
@@ -113,6 +119,8 @@ public void onPetClicked(View view) {
         if (pet.canAffordThisFood(Foods.RIBS.getCostOfFood())) {
             Toast.makeText(this, "Some tasty ribs for " + pet.getName(), Toast.LENGTH_SHORT).show();
             game.feed(Foods.RIBS);
+        } else {
+            Toast.makeText(this, "You can't afford this yet", Toast.LENGTH_SHORT).show();
         }
         refresh();
     }
@@ -121,6 +129,8 @@ public void onPetClicked(View view) {
         if (pet.canAffordThisFood(Foods.CHICKEN.getCostOfFood())) {
             Toast.makeText(this, "A couple of chicken drumsticks for " + pet.getName(), Toast.LENGTH_SHORT).show();
             game.feed(Foods.CHICKEN);
+        } else {
+            Toast.makeText(this, "You can't afford this yet", Toast.LENGTH_SHORT).show();
         }
         refresh();
     }
@@ -129,8 +139,38 @@ public void onPetClicked(View view) {
         if (pet.canAffordThisFood(Foods.STEAK.getCostOfFood())) {
             Toast.makeText(this, "A juicy steak for " + pet.getName(), Toast.LENGTH_SHORT).show();
             game.feed(Foods.STEAK);
+        } else {
+            Toast.makeText(this, "You can't afford this yet", Toast.LENGTH_SHORT).show();
         }
         refresh();
+    }
+
+    public void onLevelUpClicked(View view) {
+        if (pet.getLovePoints() >= 100) {
+            pet.levelUp();
+            Toast.makeText(this, pet.getName() + " is now level " + pet.getLevel() + "!", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, "You need 100 love points to level up " + pet.getName(), Toast.LENGTH_SHORT).show();
+        }
+
+        refresh();
+    }
+
+    //Loading and Saving game
+    private Game loadGame() {
+        SharedPreferences sharedPref = getSharedPreferences(getString(R.string.saved_game), Context.MODE_PRIVATE);
+        String gameSaved = sharedPref.getString("saved_game", "{}");
+        Gson gson = new Gson();
+        Game myGame = gson.fromJson(gameSaved, Game.class);
+        return myGame;
+    }
+
+    private void saveGame(Game game) {
+        SharedPreferences sharedPref = getSharedPreferences(getString(R.string.saved_game), Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        Gson gson = new Gson();
+        editor.putString("saved_game", gson.toJson(game));
+        editor.apply();
     }
 
 }

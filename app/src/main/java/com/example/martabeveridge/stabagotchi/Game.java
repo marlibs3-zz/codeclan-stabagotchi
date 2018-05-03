@@ -1,11 +1,17 @@
 package com.example.martabeveridge.stabagotchi;
 
-public class Game {
+import java.io.Serializable;
+
+public class Game implements Serializable{
 
     private Pet pet;
 
     public Game(Pet pet) {
         this.pet = pet;
+    }
+
+    public Pet getPet() {
+        return pet;
     }
 
     public void levelUp() {
