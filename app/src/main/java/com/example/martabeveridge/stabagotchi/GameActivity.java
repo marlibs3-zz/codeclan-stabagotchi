@@ -34,7 +34,6 @@ public class GameActivity extends AppCompatActivity {
 
 // Start the initial runnable task by posting through the handler
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,8 +57,6 @@ public class GameActivity extends AppCompatActivity {
 
         dogImageFrameIndex = 0;
         handler.postDelayed(updateDogImageFrameRunnable, 100);
-
-//      Load previous status TODO
 
     }
 
