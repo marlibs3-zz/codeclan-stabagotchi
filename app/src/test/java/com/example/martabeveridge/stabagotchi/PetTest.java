@@ -26,7 +26,7 @@ public class PetTest {
 
     @Test
     public void hasHealthPoints() {
-        assertEquals(75, puppy.getHealthPoints());
+        assertEquals(100, puppy.getHealthPoints());
     }
 
     @Test
@@ -65,18 +65,6 @@ public class PetTest {
         assertEquals(3, puppy.getLevel());
     }
 
-//    @Test
-//    public void canTellIfCanGainThisMuchHealth() {
-//        puppy.setHealthPoints(1);
-//        assertEquals(true, puppy.canGainThisMuchHealth(10));
-//    }
-//
-//    @Test
-//    public void canTellIfCanGainThisMuchHealth__not() {
-//        puppy.setHealthPoints(99);
-//        assertEquals(false, puppy.canGainThisMuchHealth(10));
-//    }
-
     @Test
     public void canAffordThisFood() {
         puppy.setLovePoints(100);
@@ -109,8 +97,9 @@ public class PetTest {
 
     @Test
     public void canDecreaseHealthByOne() {
+        puppy.setHealthPoints(5);
         puppy.decreaseHealthByOne();
-        assertEquals(74, puppy.getHealthPoints());
+        assertEquals(4, puppy.getHealthPoints());
     }
 
 }

@@ -1,12 +1,10 @@
 package com.example.martabeveridge.stabagotchi;
 
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.Handler;
 import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.Layout;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
@@ -14,14 +12,11 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.gson.Gson;
-
-
 public class GameActivity extends AppCompatActivity {
 
     private Game game;
     private Pet pet;
-//  App layout
+    //  App layout
     private ProgressBar healthBar;
     private TextView level;
     private TextView lovePoints;
@@ -32,34 +27,36 @@ public class GameActivity extends AppCompatActivity {
 
     Handler handler = new Handler();
 
-// Start the initial runnable task by posting through the handler
-
+    // New Handler allows the thread for the timer to run
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
+        //      Create the pet object and the game object as well as the vibrating feedback variable
         pet = new Pet("Taco");
         game = new Game(pet);
 
         vibrator = (Vibrator) GameActivity.this.getSystemService(Context.VIBRATOR_SERVICE);
 
-//      Start up the game
+        //      Start up the game
         healthBar = findViewById(R.id.healthBarID);
         level = findViewById(R.id.levelTextViewID);
         lovePoints = findViewById(R.id.lovePointsTextViewID);
         name = findViewById(R.id.nameTextViewID);
         petImage = findViewById(R.id.petImageID);
 
+        //      Refresh screen and run the runnable code which is the health decreasing one per second
         refresh();
-
         handler.post(runnableCode);
 
+        //      This starts the gif
         dogImageFrameIndex = 0;
         handler.postDelayed(updateDogImageFrameRunnable, 100);
 
     }
 
+    //  This code decreases the health by one every second.
     private Runnable runnableCode = new Runnable() {
         @Override
         public void run() {
@@ -73,6 +70,7 @@ public class GameActivity extends AppCompatActivity {
         }
     };
 
+    //  This code cycles through the images to create the gif of Taco
     private Runnable updateDogImageFrameRunnable = new Runnable() {
         @Override
         public void run() {
@@ -91,6 +89,8 @@ public class GameActivity extends AppCompatActivity {
         }
     };
 
+    //  This function refreshes the screen. It also includes the logic to make Taco evil at level 5.
+    //  This is bad as it is bad practice to have logic in your Activity but due to the short timescale of the project it was implemented here.
     public void refresh() {
         String levelString = ""+pet.getLevel();
         level.setText(levelString);
@@ -105,7 +105,8 @@ public class GameActivity extends AppCompatActivity {
         lovePoints.setText(loveString);
     }
 
-public void onPetClicked(View view) {
+    //This function adds the love point every time Taco is tapped. It also has evil Taco logic which is bad practice as explained above.
+    public void onPetClicked(View view) {
         vibrator.vibrate(25);
         if (pet.getLevel() == 5){
             pet.decreaseHealthByOne();
@@ -116,6 +117,7 @@ public void onPetClicked(View view) {
         refresh();
     }
 
+    //  The code below controls the food feeding buttons, including what happens when you cannot afford the food.
     public void onFeedTreatClicked(View view) {
         if (pet.canAffordThisFood(Foods.TREAT.getCostOfFood())) {
             Toast.makeText(this, "A yummy treat for " + pet.getName(), Toast.LENGTH_SHORT).show();
@@ -190,23 +192,6 @@ public void onPetClicked(View view) {
         }
 
         refresh();
-    }
-
-    //Loading and Saving game
-    private Game loadGame() {
-        SharedPreferences sharedPref = getSharedPreferences(getString(R.string.saved_game), Context.MODE_PRIVATE);
-        String gameSaved = sharedPref.getString("saved_game", "{}");
-        Gson gson = new Gson();
-        Game myGame = gson.fromJson(gameSaved, Game.class);
-        return myGame;
-    }
-
-    private void saveGame(Game game) {
-        SharedPreferences sharedPref = getSharedPreferences(getString(R.string.saved_game), Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPref.edit();
-        Gson gson = new Gson();
-        editor.putString("saved_game", gson.toJson(game));
-        editor.apply();
     }
 
 }

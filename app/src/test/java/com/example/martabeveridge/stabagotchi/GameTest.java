@@ -7,17 +7,18 @@ import static org.junit.Assert.assertEquals;
 
 public class GameTest {
 
-    private Foods treat;
-    private Foods bigbowl;
     private Pet puppy;
     private Game game;
 
     @Before
     public void before() {
-        treat = Foods.TREAT;
-        bigbowl = Foods.BIGBOWL;
         puppy = new Pet("Taco");
         game = new Game(puppy);
+    }
+
+    @Test
+    public void startsAtLevel1() {
+        assertEquals(1, puppy.getLevel());
     }
 
     @Test
@@ -31,49 +32,16 @@ public class GameTest {
 
     @Test
     public void feedIncreasesHealth() {
-        puppy.setLovePoints(10000);
+        puppy.setLovePoints(100);
         game.feed(Foods.BIGBOWL);
-        assertEquals(60, puppy.getHealthPoints());
+        assertEquals(100, puppy.getHealthPoints());
     }
 
     @Test
     public void feedDecreasesMoney() {
         game.feed(Foods.BOWL);
-        assertEquals(150, puppy.getLovePoints());
+        assertEquals(180, puppy.getLovePoints());
     }
-
-//    @Test
-//    public void canReplenishHealth() {
-//        puppy.setHealthPoints(1);
-//        game.replenishHealth(bigbowl);
-//        assertEquals(11, puppy.getHealthPoints());
-//    }
-//
-//    @Test
-//    public void canReplenishHealthNearMax() {
-//        puppy.setHealthPoints(99);
-//        game.replenishHealth(bigbowl);
-//        assertEquals(100, puppy.getHealthPoints());
-//    }
-//
-//    @Test
-//    public void canFeedPet() {
-//        puppy.setHealthPoints(99);
-//        puppy.setLovePoints(150);
-//        game.feed(bigbowl);
-//        assertEquals(50, puppy.getLovePoints());
-//        assertEquals(100, puppy.getHealthPoints());
-//    }
-//
-//    @Test
-//    public void canFeedPetNotEnoughLovePoints() {
-//        puppy.setHealthPoints(50);
-//        puppy.setLovePoints(5);
-//        game.feed(bigbowl);
-//        assertEquals(5, puppy.getLovePoints());
-//        assertEquals(50, puppy.getHealthPoints());
-//    }
-
 }
 
 
