@@ -5,7 +5,7 @@ This was the Java project for the CodeClan programming course. I chose to make a
 ![Stabagotchi Demo](https://raw.githubusercontent.com/beveradb/codeclan-stabagotchi/master/stabagotchi-demo.gif)
 
 ## See it in action
-Download it from the google play store at http://stabagotchi.uk/
+Download it from the google play store at https://play.google.com/store/apps/details?id=com.martabeveridge.stabagotchi&hl=en
 
 ## Specification
 As this was a CodeClan project, I was not able to use any frameworks as this was part of the spec. This project was to be completed in 4 days. I outlined my MVP and extensions in my trello board for this project at https://trello.com/b/YM38XVhA/stabagotchi
